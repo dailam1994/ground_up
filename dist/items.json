@@ -1,0 +1,14 @@
+{
+    "items": [
+        {
+            "id": 1,    
+            "product": "Oxygen Tank",
+            "priceInCents": 10000
+        },
+        {    
+            "id": 2,
+            "product": "Soil Bag",
+            "priceInCents": 1000
+        }
+    ]
+}
