@@ -1,0 +1,1446 @@
+/* Playground */
+.playground {
+  padding-top: 65px;
+}
+
+/* Global Variables */
+:root {
+  --customBrown: rgb(54,52,52);
+  --customYellow: rgb(226,266,76);
+  --customOrange: rgb(182,110,40);
+  --customWood: rgb(81,69,68);
+  --customGreen: rgb(60,129,83);
+}
+
+/* Overall */
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255,255,255);
+}
+
+button {
+  position: absolute;
+}
+
+hr {
+  width: 150px;
+  margin-top: 50px;
+  background-color: rgb(255,255,255);
+}
+
+.root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.active {
+  color: var(--customYellow);
+}
+
+#cart > a > span > span {
+  background-color: var(--customYellow) !important;
+  color: rgb(0,0,0) !important;
+}
+
+/* Media Query: >1280px Desktop Screen */
+@media screen
+        and (min-width: 1280px) {
+    
+  /* Overall */
+  body {
+      margin: 0;
+      border: 0;
+      background-color: rgb(255,255,255);
+  }
+
+  a:hover {
+    color: var(--customYellow) !important;
+  }
+
+  /* Display None */
+  .t-header, .t-footer, .m-header, .m-navbar, .about > .oxygen-heading > a {
+    display: none;
+  }
+
+  /* LAYOUT - Sidebar */
+  .d-sidebar {
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: var(--customBrown);
+  }
+
+  .d-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .d-brand > img {
+    height: 65px;
+    width: 65px;
+    margin-bottom: 10px;
+  }
+
+  .d-brand > h5 {
+    color: rgb(255,255,255);
+  }
+
+  /* LAYOUT - Sidebar - Navbar */
+  .d-navbar {
+    display: absolute;
+    margin-top: 80px;
+  }
+
+  .d-navbar > ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .d-navbar-items {
+    color: rgb(255,255,255);
+    margin-bottom: 15px;
+  }
+
+  #cart > a {
+    display: flex;
+    align-items: center;
+  }
+
+  /* LAYOUT - Sidebar - Social */
+  .social {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  /* LAYOUT - Sidebar - Footer */
+  .d-footer {
+    position: fixed;
+    left: 0;
+    bottom: 25px;
+    width: 250px;
+    text-align: center;
+    color: rgb(255,255,255);
+  }
+
+  /* PAGES - Home/About */
+  .home, .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    margin-left: 250px;
+    padding-bottom: 25px;
+  }
+
+  /* PAGES - Home/About - Notice */
+  .notice {
+    grid-area: notice;
+    grid-column: 1 / 5;
+    align-self: center;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--customYellow);
+    z-index: 1;
+  }
+
+  .notice > span {
+    font-weight: bold;
+    margin-right: 200px;
+    color: var(--customOrange);
+  }
+
+  /* PAGES - Home/About - Main Content */
+  .home > .soil-image, .about > .soil-image {
+    grid-area: soilImage;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    align-self: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home > .oxygen-image, .about > .oxygen-image {
+    grid-area: oxygenImage;
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+    align-self: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .soil-heading > h5 {
+    margin-bottom: 40px;
+    padding: 0px 10px !important;
+    font-size: 40px;
+    color: rgb(255,255,255);
+  }
+
+  .soil-paragraph > h6 {
+    font-size: 30px;
+    font-weight: bold !important;
+    color: var(--customGreen);
+  }
+
+  .oxygen-heading > h6 {
+    margin-top: 0px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255,255,255);
+  }
+
+  .oxygen-paragraph > h6 {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255,255,255);
+  }
+
+  .oxygen-heading > a, .soil-heading > a {
+    height: 50px;
+    width: 200px;
+    font-size: 30px;
+  }
+
+  /* PAGES - Home - Main Content */
+  .home > .soil-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 300px;
+    right: 15px;
+    padding-bottom: 20px;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .home > .soil-paragraph {
+    grid-area: soilParagraph;
+    grid-column: 1 / 5;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -6px;
+    padding: 10px 30px;
+    text-align: center;
+    background-color: rgb(255,255,255);
+  }
+
+  .home > .oxygen-heading {
+    grid-area: oxygenHeading;
+    grid-column: 4 / 5;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 330px;
+    right: 15px;
+    padding: 0px 25px;
+    text-align: center;
+  }
+
+  .home > .oxygen-paragraph {
+    grid-area: oxygenParagraph;
+    grid-column: 1 / 5;
+    grid-row: 5 / 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 30px;
+    text-align: center;
+    background-color: var(--customWood);
+  }
+
+  /* PAGES - About - Main Content */
+  .about > .soil-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 430px;
+    top: -180px;
+    left: 280px;
+    padding-bottom: 20px;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .about > .soil-heading > a {
+    height: 50px;
+    width: 200px;
+    font-size: 30px;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    z-index: 1;
+  }
+
+  .about > .oxygen-heading {
+    grid-area: oxygenHeading;
+    grid-column: 1 / 5;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    top: -180px;
+    left: 50px;
+    text-align: center;
+  }
+
+  .about > .oxygen-heading > h6 {
+    margin-top: 0px;
+    margin-bottom: 40px;
+    font-size: 45px;
+    font-weight: bold;
+    color: rgb(255,255,255);
+  }
+
+  /* PAGES - Product - Main Content */
+  .product {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    margin-left: 250px;
+    padding-bottom: 25px;
+  }
+
+  .product > .oxygen-heading {
+    grid-area: productOxygenHeading;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-left: 10px;
+    padding: 15px 0px;
+    text-align: left;
+    color: var(--customGreen);
+  }
+
+  .product > #image1 {
+    grid-area: oxygenImage1;
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+    margin: 10px;
+  }
+
+  .product > #image2 {
+    grid-area: oxygenImage2;
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+    margin: 10px;
+  }
+
+  .product > #image3 {
+    grid-area: oxygenImage3;
+    grid-column: 2 / 4;
+    grid-row: 4 / 5;
+    margin: 10px;
+  }
+
+  #oxygen-image1, #oxygen-image2, #oxygen-image3, #soil-image1, #soil-image2, #soil-image3 {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .oxygen-image, .soil-image {
+    width: 100%;
+  }
+
+  .product > .soil-heading {
+    grid-area: soilOxygenHeading;
+    grid-column: 1 / 4;
+    grid-row: 5 / 6;
+    margin-left: 10px;
+    padding: 15px 0px;
+    text-align: left;
+    color: var(--customWood);
+  }
+
+  .product > a {
+    position: fixed;
+    right: 10px;
+    bottom: 30px;
+  } 
+
+  .product > #image4 {
+    grid-area: oxygenImage4;
+    grid-column: 1 / 2;
+    grid-row: 6 / 7;
+    margin: 10px;
+  }
+
+  .product > #image5 {
+    grid-area: oxygenImage5;
+    grid-column: 2 / 4;
+    grid-row: 6 / 8;
+    margin: 10px;
+  }
+
+  .product > #image6 {
+    grid-area: oxygenImage6;
+    grid-column: 1 / 2;
+    grid-row: 7 / 8;
+    margin: 10px;
+  }
+
+  /* PAGES - Shop - Main Content */
+  .shop {
+    padding-top: 1px;
+    margin-left: 250px;
+    padding-bottom: 25px;
+  }
+
+  /* PAGES - Shop - Main Content - Card */
+  .shop > .oxygen-card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    margin: 20px;
+    margin-top: 40px;
+    padding: 15px 0px;
+  }
+
+  .shop > .soil-card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    margin: 20px;
+    padding: 15px 0px;
+  }
+
+  .shop > .oxygen-card > .oxygen-card-image-container {
+    margin: 10px;
+    grid-area: oxygenCardImage;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .oxygen-card-image-container > img, .soil-card-image-container > img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .shop > .soil-card > .soil-card-image-container {
+    margin: 10px;
+    grid-area: oxygenCardImage;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .oxygen-card > .css-46bh2p-MuiCardContent-root, .oxygen-card > .css-1qw96cp {
+    grid-area: oxygenCardContent;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: auto;
+    position: relative;
+  }
+
+  .soil-card > .css-46bh2p-MuiCardContent-root, .soil-card > .css-1qw96cp {
+    grid-area: soilCardContent;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: auto;
+    position: relative;
+  }
+
+  .css-18k87ye-MuiTypography-root, .css-t1nuxs {
+    margin-top: 50px !important;
+  }
+
+  .oxygen-form {
+    grid-area: oxygenCardContent2;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .soil-card > form {
+    grid-area: soilCardContent2;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .css-11qr2p8-MuiButtonBase-root-MuiButton-root, .css-1lpukdo {
+    margin: 10px !important;
+  }
+
+  /* PAGES - Cart - Main Content */
+  .cart {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    margin-left: 250px;
+    padding-top: 100px;
+    padding-bottom: 25px;
+  }
+  
+  .cart > .css-1vw6mcs-MuiTypography-root, .cart > .css-gtvj52 { /* <== h4 - Title */ 
+    margin: 10px 10px 10px 50px !important;
+  }
+
+  .cart > .css-h93ljk-MuiTypography-root, .cart > .css-t1nuxs { /* <== h5 - SubTitle */ 
+    margin: 50px 10px 10px 50px !important;
+  }
+
+  .cart > ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .cart > ul > li > div > svg {
+    background-color: yellow;
+    border-radius: 50%;
+    border: 2px solid rgb(0,0,0);
+    margin-right: 10px;
+  }
+}
+
+/* Media Query: Between Desktop and Mobile Phone */
+@media screen
+        and (min-width: 480px)
+        and (max-width: 1280px) {
+    
+  /* Overall */
+  body {
+    margin: 0;
+    border: 0;
+    background-color: rgb(255,255,255);
+  }
+
+  /* Display None */
+  .m-header, .m-navbar, .d-navbar, .d-brand, .about > .oxygen-heading > a {
+    display: none;
+  }
+
+  /* LAYOUT - Header */
+  .t-header {
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    height: 65px;
+    width: 100%;
+    background-color: var(--customBrown);
+    z-index: 1;
+  }
+
+  .t-brand {
+    float: left;
+    display: flex;
+    align-items: center;
+    width: 205px;
+    margin-left: 20px; 
+  }
+
+  .t-brand > img {
+    height: 65px;
+    width: 65px;
+  }
+
+  .t-brand > h5 {
+    color: rgb(255,255,255);
+  }
+
+  /* PAGES - Home */
+  .home {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 19fr;
+    padding-top: 65px;
+    padding-bottom: 45px;
+  }
+  
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 30fr;
+    padding-top: 65px;
+    padding-bottom: 45px;
+  }
+
+  /* PAGES - Home/About - Notice */
+  .notice {
+    grid-area: notice;
+    grid-row: 0 / 1;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: var(--customYellow);
+    z-index: 1;
+  }
+
+  .notice > span {
+    font-weight: bold;
+    color: var(--customOrange);
+  }
+
+  /* PAGES - Home/About - Main Content */
+  .home > .soil-image, .about > .soil-image {
+    grid-area: soilImage;
+    grid-column: 2 / 5;
+    grid-row: 2 / 3;
+    align-self: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home > .oxygen-image, .about > .oxygen-image {
+    grid-area: oxygenImage;
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+    align-self: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .soil-heading > h5 {
+    margin-bottom: 40px;
+    padding: 0px 10px !important;
+    font-size: 40px;
+    color: rgb(255,255,255);
+  }
+
+  .soil-paragraph > h6 {
+    font-size: 30px;
+    font-weight: bold !important;
+    color: var(--customGreen);
+  }
+
+  .soil-heading > a {
+    width: 150px;
+    position: none;
+  }
+
+  .oxygen-heading > h6 {
+    margin-top: -40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--customGreen);
+  }
+
+  .oxygen-heading > a {
+    margin-top: 25px;
+    margin-left: 100px;
+    margin-bottom: -45px;
+    width: 150px;
+    position: none;
+  }
+
+  .oxygen-paragraph > h6 {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(255,255,255);
+  }
+
+  /* PAGES - Home - Main Content */
+  .home > .soil-heading {
+    grid-area: soilHeading;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 20px;
+    text-align: center;
+    background-color: var(--customWood);
+  }
+
+  .home > .soil-paragraph {
+    grid-area: soilParagraph;
+    grid-column: 1 / 5;
+    grid-row: 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 175px;
+    margin-top: -6px;
+    padding: 10px 30px;
+    text-align: center;
+    background-color: rgb(255,255,255);
+  }
+
+  .home > .oxygen-heading {
+    grid-area: oxygenHeading;
+    grid-column: 4 / 5;
+    grid-row: 4 / 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 25px;
+    text-align: center;
+    background-color: rgb(255,255,255);
+  }
+
+  .home > .oxygen-paragraph {
+    grid-area: oxygenParagraph;
+    grid-column: 1 / 5;
+    grid-row: 5 / 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 30px;
+    text-align: center;
+    background-color: var(--customWood);
+  }
+
+  /* PAGES - About - Main Content */
+  .about > .soil-heading {
+    grid-area: soilHeading;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+    background-color: var(--customWood);
+  }
+
+  .about > .oxygen-heading {
+    grid-area: oxygenHeading;
+    grid-column: 4 / 5;
+    grid-row: 4 / 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(255,255,255);
+  }
+
+  .about > .oxygen-heading > h6 {
+    padding: 70px 5px;
+  }
+  
+  .about > .soil-heading > a {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+  }
+
+  /* PAGES - Product - Main Content */
+  .product {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    padding-top: 65px;
+    padding-bottom: 50px;
+  }
+
+  .product > .oxygen-heading {
+    grid-area: productOxygenHeading;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-top: 25px;
+    margin-left: 10px;
+    padding: 15px 0px;
+    text-align: left;
+    color: var(--customGreen);
+  }
+
+  .product > #image1 {
+    grid-area: oxygenImage1;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    margin: 10px;
+  }
+
+  .product > #image2 {
+    grid-area: oxygenImage2;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    margin: 10px;
+  }
+
+  .product > #image3 {
+    grid-area: oxygenImage3;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+    margin: 10px;
+  }
+
+  #oxygen-image1, #oxygen-image2, #oxygen-image3, #soil-image1, #soil-image2, #soil-image3 {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .oxygen-image, .soil-image {
+    width: 100%;
+  }
+
+  .product > .soil-heading {
+    grid-area: soilOxygenHeading;
+    grid-column: 1 / 4;
+    grid-row: 4 / 5;
+    margin-left: 10px;
+    padding: 15px 0px;
+    text-align: left;
+    color: var(--customWood);
+  }
+
+  .product > #image4 {
+    grid-area: oxygenImage4;
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+    margin: 10px;
+  }
+
+  .product > #image5 {
+    grid-area: oxygenImage5;
+    grid-column: 2 / 4;
+    grid-row: 5 / 7;
+    margin: 10px;
+  }
+
+  .product > #image6 {
+    grid-area: oxygenImage6;
+    grid-column: 1 / 2;
+    grid-row: 6 / 7;
+    margin: 10px;
+  }
+
+  .product > a {
+    position: fixed;
+    right: 10px;
+    bottom: 60px;
+  }
+
+  /* PAGES - Shop - Main Content */
+  .shop {
+    padding-top: 65px;
+    padding-bottom: 102px;
+  }
+
+  /* PAGES - Shop - Main Content - Card */
+  .shop > .oxygen-card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    margin: 20px;
+    margin-top: 40px;
+    padding: 15px 0px;
+  }
+
+  .shop > .soil-card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    margin: 20px;
+    padding: 15px 0px;
+  }
+
+  .shop > .oxygen-card > .oxygen-card-image-container {
+    margin: 10px;
+    grid-area: oxygenCardImage;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .oxygen-card-image-container > img, .soil-card-image-container > img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .shop > .soil-card > .soil-card-image-container {
+    margin: 10px;
+    grid-area: oxygenCardImage;
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+
+  .oxygen-card > .css-46bh2p-MuiCardContent-root, .oxygen-card > .css-1qw96cp {
+    grid-area: oxygenCardContent;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: auto;
+    position: relative;
+  }
+
+  .soil-card > .css-46bh2p-MuiCardContent-root, .soil-card > .css-1qw96cp {
+    grid-area: soilCardContent;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    width: auto;
+    position: relative;
+  }
+
+  .css-18k87ye-MuiTypography-root, .css-t1nuxs {
+    margin-top: 50px !important;
+  }
+
+  .oxygen-form {
+    grid-area: oxygenCardContent2;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .soil-card > form {
+    grid-area: soilCardContent2;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .css-11qr2p8-MuiButtonBase-root-MuiButton-root, .css-1lpukdo {
+    margin: 10px !important;
+  }
+
+  .oxygen-card > form {
+    grid-area: oxygenCardContent2;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .soil-card > form {
+    grid-area: soilCardContent2;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .css-11qr2p8-MuiButtonBase-root-MuiButton-root, .css-1lpukdo {
+    margin: 10px !important;
+  }
+
+  /* PAGES - Cart - Main Content */
+  .cart {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    padding-top: 115px;
+    padding-bottom: 102px;
+  }
+  
+  .cart > .css-1vw6mcs-MuiTypography-root, .cart > .css-gtvj52 { /* <== h4 - Title */ 
+    margin: 10px 10px 10px 50px !important;
+  }
+
+  .cart > .css-h93ljk-MuiTypography-root, .cart > .css-t1nuxs { /* <== h5 - SubTitle */ 
+    margin: 50px 10px 10px 50px !important;
+  }
+
+  .cart > ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .cart > ul > li > div > svg {
+    background-color: yellow;
+    border-radius: 50%;
+    border: 2px solid rgb(0,0,0);
+    margin-right: 10px;
+  }
+
+  /* LAYOUT - Header - Navbar */
+  .t-navbar {
+    display: absolute;
+  }
+
+  .t-navbar > ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .t-navbar-items {
+    color: rgb(255,255,255);
+    margin-right: 15px;
+  }
+
+  #cart > a {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Footer */
+  .t-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: -2px;
+    height: 50px;
+    width: 100%;
+    color: rgb(255,255,255);
+    background-color: var(--customBrown);
+  }
+}
+
+
+/* Media Query: <480px Mobile Phone Screen */
+@media screen
+        and (max-width: 480px) {
+    
+  /* Overall */
+  body {
+    margin: 0;
+    border: 0;
+    background-color: rgb(255,255,255);
+  }
+
+  /* Display None */
+  .t-header, .t-footer, .d-navbar, .d-brand {
+    display: none;
+  }
+
+  /* LAYOUT - Header */
+  .m-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    height: 65px;
+    width: 100%;
+    background-color: var(--customBrown);
+    z-index: 1;
+  }
+
+  .m-header > img {
+    height: 65px;
+    width: 65px;
+  }
+
+  .m-header > h5 {
+    color: rgb(255,255,255);
+  }
+
+  /* LAYOUT - Navbar */
+  .m-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: -2px;
+    height: 105px;
+    width: 100%;
+    background-color: var(--customBrown);
+  }
+
+  .m-navbar > ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0;
+  }
+
+  .m-navbar-items > a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .m-navbar-items > svg, .m-navbar-items > span {
+    color: rgb(255,255,255) !important;
+  }
+
+  /* PAGES - Home/About */
+  .home, .about {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding-top: 65px;
+    padding-bottom: 102px;
+  }
+
+  /* PAGES - Home/About/Product - Notice */
+  .notice {
+    grid-area: notice;
+    grid-row: 1 / 2;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background-color: var(--customYellow);
+    z-index: 1;
+  }
+
+  .notice > span {
+    font-weight: bold;
+    color: var(--customOrange);
+  }
+
+  /* PAGES - Home/About - Main Content */
+  .home > .soil-image, .about > .soil-image {
+    grid-area: soilImage;
+    grid-row: 2 / 3;
+    margin-top: 25px !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home > .oxygen-image, .about > .oxygen-image {
+    grid-area: oxygenImage;
+    grid-row: 5 / 6;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home > .oxygen-heading {
+    grid-area: oxygenHeading;
+    grid-row: 6 / 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 175px;
+    margin-top: -6px;
+    padding: 0px 25px;
+    text-align: center;
+    background-color: rgb(255,255,255);
+  }
+
+  .soil-heading > h5 {
+    width: 100%;
+    margin: 0px 23px;
+    color: rgb(255,255,255);
+  }
+
+  .soil-paragraph > h6 {
+    font-weight: bold !important;
+    color: var(--customGreen);
+  }
+
+  .oxygen-heading > h6 {
+    width: 100%;
+    font-weight: bold;
+    color: var(--customGreen);
+  }
+  
+  .oxygen-paragraph > h6 {
+    width: 100%;
+    font-weight: bold;
+    color: rgb(255,255,255);
+  }
+
+  .oxygen-heading > a {
+    margin-top: 25px;
+    margin-bottom: -45px;
+    position: none;
+  }
+
+  /* PAGES - Home - Main Content */
+  .home > .soil-heading {
+    grid-area: soilHeading;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 175px;
+    margin-top: -6px;
+    text-align: center;
+    background-color: var(--customWood);
+  }
+
+  .home > .soil-paragraph {
+    grid-area: soilParagraph;
+    grid-row: 4 / 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 175px;
+    margin-top: -6px;
+    padding: 10px 30px;
+    text-align: center;
+    background-color: rgb(255,255,255);
+  }
+
+  .home > .oxygen-paragraph {
+    grid-area: oxygenParagraph;
+    grid-row: 7 / 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 175px;
+    padding: 25px 30px;
+    text-align: center;
+    background-color: var(--customWood);
+  }
+
+  /* PAGES - About - Main Content */
+  .about > .soil-heading {
+    grid-area: soilHeading;
+    grid-row: 3 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin-top: -6px;
+    padding: 15px 23px;
+    text-align: center;
+    background-color: var(--customWood);
+  }
+
+  .about > .soil-heading > a {
+    top: 15px;
+    left: 100px;
+  }
+
+  .about > .oxygen-heading {
+    grid-area: oxygenHeading;
+    grid-row: 6 / 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin-top: -6px;
+    padding: 0px 25px;
+    padding-bottom: 40px;
+    text-align: center;
+    background-color: rgb(255,255,255);
+  }
+
+  .about > .oxygen-heading > a {
+    left: 100px;
+  }
+
+  /* PAGES - Product - Main Content */
+  .product {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    padding-top: 65px;
+    padding-bottom: 102px;
+  }
+
+  .product > .oxygen-heading {
+    grid-area: productOxygenHeading;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-top: 25px;
+    padding: 15px 0px;
+    text-align: center;
+    color: rgb(255,255,255);
+    background-color: var(--customGreen);
+  }
+
+  .product > #image1 {
+    grid-area: oxygenImage1;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    margin: 5px;
+  }
+
+  .product > #image2 {
+    grid-area: oxygenImage2;
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+    margin: 0px 5px 5px 5px;
+  }
+
+  .product > #image3 {
+    grid-area: oxygenImage3;
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+    margin: 0px 5px 5px 5px;
+  }
+
+  .product > #image4 {
+    grid-area: oxygenImage4;
+    grid-column: 1 / 2;
+    grid-row: 7 / 8;
+    margin: 5px;
+  }
+
+  .product > #image5 {
+    grid-area: oxygenImage5;
+    grid-column: 1 / 2;
+    grid-row: 8 / 9;
+    margin: 0px 5px 5px 5px;
+  }
+
+  .product > #image6 {
+    grid-area: oxygenImage6;
+    grid-column: 1 / 2;
+    grid-row: 9 / 10;
+    margin: 0px 5px 5px 5px;
+  }
+
+  .oxygen-image, .soil-image {
+    width: 100%;
+  }
+
+  .product > .soil-heading {
+    grid-area: soilOxygenHeading;
+    grid-column: 1 / 2;
+    grid-row: 6 / 7;
+    padding: 15px 0px;
+    text-align: center;
+    color: rgb(255,255,255);
+    background-color: var(--customWood);
+  }
+
+  .product > a {
+    position: fixed;
+    right: 10px;
+    bottom: 110px;
+  }
+
+  /* PAGES - Shop - Main Content */
+  .shop {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    padding-top: 65px;
+    padding-bottom: 102px;
+  }
+
+  /* PAGES - Shop - Main Content - Card */
+  .shop > .oxygen-card {
+    grid-area: oxygenCard;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin: 20px;
+    margin-top: 40px;
+    padding: 15px 0px;
+    background-color: var(--customYellow);
+  }
+
+  .shop > .oxygen-card > .oxygen-card-image-container {
+    margin: 10px;
+  }
+
+  .shop > .oxygen-card > .oxygen-card-image-container > img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .oxygen-image, .soil-image {
+    width: 100%;
+  }
+
+  form.oxygen-form, form.soil-form {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .oxygen-form > div, .soil-form > div {
+    width: 150px;
+  }
+
+  .shop > .soil-card {
+    grid-area: oxygenCard;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    margin: 20px;
+    padding: 15px 0px;
+    background-color: var(--customYellow);
+  }
+
+  .shop > .soil-card > .soil-card-image-container {
+    margin: 10px;
+  }
+
+  .shop > .soil-card > .soil-card-image-container > img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  /* PAGES - Cart - Main Content */
+  .cart {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    padding-top: 65px;
+    padding-bottom: 102px;
+  }
+  
+  .cart > .css-1vw6mcs-MuiTypography-root, .cart > .css-gtvj52 { /* <== h4 - Title */ 
+    margin: 10px !important;
+  }
+
+  .cart > .css-h93ljk-MuiTypography-root, .cart > .css-t1nuxs { /* <== h5 - SubTitle */ 
+    margin: 10px !important;
+  }
+
+  .cart > ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .cart > ul > li > div > svg {
+    background-color: yellow !important; 
+    border-radius: 50%;
+    border: 2px solid rgb(0,0,0);
+    margin-right: 10px;
+  }
+}
